@@ -1,11 +1,10 @@
-import env from 'dotenv';
-const apiKey = process.env.API_KEY;
-    console.log(apiKey);
-        const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=vietnam&units=metric"
-        async function checkWeather() {
-            const response = await fetch(apiURL + `&appid=${apiKey}`);
-            console.log(response);
-            let data = await response.json();
-            console.log(data);
-        }
-checkWeather()
+async function getWeather() {
+    const city = document.getElementById("cityInput").value;
+    try {
+        const responce = await fetch(`http://localhost:3000/weather?city=${city}`) ;
+        const data = await responce.json();
+    } catch (err) {
+        console.log(err);
+    }
+
+}

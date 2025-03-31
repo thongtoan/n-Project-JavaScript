@@ -10,8 +10,8 @@
     
     <div class="card">
         <div class="search">
-            <input type="text" placeholder="enter city name" spellcheck="false">
-            <button><img src="images/search.png"></button>
+            <input type="text" id="cityInput" placeholder="enter city name" spellcheck="false">
+            <button onclick="getWeather()"><img src="images/search.png"></button>
         </div>
         <div class="weather">
             <img src="images/drizzle.png" class="wheather-icon">
@@ -36,20 +36,7 @@
         </div>
     </div>
     
-    <script src="script.js">
-
-
-const apiKey = "efd9b540e3562c5f2d778fdc2660fa1b";
-
-        const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=vietnam&units=metric"
-        async function checkWeather() {
-            const response = await fetch(apiURL + `&appid=${apiKey}`);
-            console.log(response);
-            let data = await response.json();
-            console.log(data);
-        }
-checkWeather()
-    </script>
+    <script src="script.js"></script>
     
 </body>
 </html>

@@ -1,5 +1,5 @@
 import express from 'express';
-import fetch from 'node-fetch';
+import axios from 'axios';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
@@ -8,8 +8,8 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 
+app.use(cors()); 
 app.use(express.static("public"));
-app.use(cors());
 app.use(express.json());
 
 app.get("/", async (req, res) => {
@@ -17,6 +17,15 @@ app.get("/", async (req, res) => {
 })
 
 app.get("/weather", async (req, res) => {
+    try {
+        const city = req.query.city;
+        const apiKey = process.env.API_KEY;
+        const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        const response = await axios.get(weatherApiUrl);
+        res.json(response.data);
+    } catch (err) {
+        console.log(err);
+    }
     
 })
 

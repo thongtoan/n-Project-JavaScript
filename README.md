@@ -32,3 +32,40 @@ Với Front-end dùng HTML / CSS, Back-end sử dụng Express để đơn giả
 - Xử lý thành phần input tương tác trên giao diện để truyền data vào (thay vì hard code)
 - Thay đổi CSS phù hợp với từng kết quả truyền về
 - Hoàn thành
+
+
+🔥 Task 1: Setup dự án
+
+✅ Khởi tạo project (npm init -y).
+✅ Cài đặt Express, dotenv, cors, node-fetch (npm i express dotenv cors node-fetch).
+✅ Tạo file server.js.
+✅ Cấu hình dotenv và .gitignore.
+
+⸻
+
+🔥 Task 2: Xây dựng Backend
+
+✅ Tạo server Express cơ bản.
+✅ Thêm middleware cors(), express.json(), express.static().
+✅ Tạo API /weather nhận tên thành phố.
+✅ Fetch dữ liệu từ OpenWeather API.
+✅ Xử lý & format JSON trả về.
+
+⸻
+
+🔥 Task 3: Xây dựng Frontend
+
+✅ Tạo form nhập thành phố (<input> + <button>).
+✅ Gửi request đến backend qua fetch().
+✅ Hiển thị dữ liệu thời tiết nhận được.
+✅ Xử lý loading & lỗi.
+✅ Thiết kế CSS đơn giản.
+
+⸻
+
+🔥 Task 4: Hoàn thiện & Bảo mật
+
+✅ Kiểm tra .gitignore không push .env.
+✅ Kiểm tra lỗi CORS, response format.
+✅ Kiểm tra lại UI frontend.
+✅ Viết README.md hướng dẫn sử dụng.
